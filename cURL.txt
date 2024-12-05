@@ -1,0 +1,39 @@
+
+//// POST /////
+
+curl -X POST http://127.0.0.1:8000/events/ \
+-H "Content-Type: application/json" \
+-d '{
+    "event": "engine_events",
+    "count": 7,
+    "timestamp": 1733251744395,
+    "data": [
+        {
+            "powerunit_vin": "LEMBERGVIN",
+            "powerunit_id": "LEMBERGCVD",
+            "hardware_type": "cvd-605",
+            "ignition": true,
+            "wheels_in_motion": true,
+            "location": {
+                "city": "La Jolla",
+                "state": "CA",
+                "country": "US",
+                "lat": 32.7831395,
+                "lon": -117.25234
+            },
+            "engine_parameters": {
+                "rpm": 8921.0,
+                "odometer": 1000.0,
+                "speed": 27.0,
+                "fuel_level": 0.98,
+                "cruise_control_active": true,
+                "cruise_control_set_speed": 27.0
+            }
+        }
+    ]
+}'
+
+
+///// GET /////
+
+curl -X GET http://127.0.0.1:8000/events/
